@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <title>Ohio</title>
+</head>
+<body>
+    <div class="pickShop">
+        <div>
+            <input class="selectShop" placeholder="Select Shop" type="text" list="shopNames" maxlength="255"/>
+            <datalist id="shopNames"></datalist>
+            <input id="submitSelectedShop" type="submit"/>
+        </div>
+    </div>
+    <div class="home hide">
+        <div>
+            <button class="mainOptions" id="chooseShop">Select Shop</button>
+            <button class="mainOptions" id="newShop">Create New Donut Shop</button>
+            <button class="mainOptions" id="newVariety">Create New Donut Variety</button>
+            <button class="mainOptions" id="addInven">Add Inventory</button>
+            <button class="mainOptions" id="seeInven">Display Inventory</button>
+            <button class="mainOptions" id="seeRev">Display Revenue</button>
+            <button class="mainOptions" id="buy">Purchase Donuts</button>
+        </div>
+    </div>
+    <div class="hide" id="createShops">
+        <h1 class="hide warn">Please enter a real donut name.</h1>
+        <label for="newShopName">Name of New Shop:</label>
+        <input id="newShopName" type="text" maxlength="255"/>
+        <input id="submitNewShop" type="submit"/>
+        <button id="escapeCreateShop">Go Back</button>
+    </div>
+    <div class="hide" id="createDonut">
+        <h1 class="hide warn2">Please enter a real donut name.</h1>
+        <label for="newVariety">New donut type:</label>
+        <input id="newVarietyDonut" type="text" maxlength="255"/>
+        <label for="newPrice">Cost of new donut:</label>
+        <input id="newPrice" type="number" min="0.01" max="100" step="0.01"/>
+        <input id="endCreate" type="submit"/>
+        <ul class="hide" id="duplicateWarning"></ul>
+        <button id="escapeCreateDonut">Go Back</button>
+        
+    </div>    
+    <div class="hide" id="cookDonut">
+        <label for="cookedDonut">Donut type to add to:</label>
+        <input id="cookedDonut" maxlength="255"/>
+        <label for="amountCookedDonut">Amount to add to inventory:</label>
+        <input id="amountCookedDonut" type="number" step="1" min="1"/>
+        <input id="endAdd" type="submit"/>
+        <button id="escapeCookDonut">Go Back</button>
+    </div>
+    <div class="hide" id="viewInventory">
+        <ol id="menuList">
+        </ol>
+        <button id=endViewInventory type="submit">Ok</button>
+    </div>
+    <div class="hide" id="viewRevenue">
+        <ul class="seeCurrentRevenue"></ul>
+        <button id="endViewRevenue" type="submit">Wow</button>
+    </div>
+    <div class="hide" id="buyDonut">
+        <label for="typeToBuy">Type of donut they want to buy:</label>
+        <input id="typeToBuy" maxlength="255"/>
+        <label for="amountToBuy">How many:</label>
+        <input id="amountToBuy" type="number" step="1" min="1"/>
+        <input id="submitBuyDonut" type="submit"/>
+        <button id="escapeBuyDonut">Go Back</button>
+    </div>
+    <div class="hide" id="showTotal">
+        <ul class='showTotal2'></ul>
+        <button id="endBuyDonut">Return to Main Menu</button>
+    </div>
+    <script type="module" src="event_listen.js"></script>
+</body>
+</html>
